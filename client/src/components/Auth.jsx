@@ -31,7 +31,8 @@ const Auth = () => {
         const URL = 'https://chatty-server-p80i.onrender.com'
         //url
 
-        const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
+       const { data: { token, userId, hashedPassword, fullName } } =
+  await axios.post(`${URL}/auth/${isSignup ? 'signup' : 'login'}`, {
             username, password, fullName: form.fullName, phoneNumber, avatarURL,
         });
 
